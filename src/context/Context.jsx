@@ -10,7 +10,7 @@ export function ThemeContextProvider({ children }) {
   });
 
   function changeTheme(newTheme) {
-    setTheme({ ...theme, ...newTheme });
+    setTheme({ ...theme, ...newTheme }); //used this method but not sure of its functionality
     console.log(theme.color); //console log shows that its functioning
   }
 
