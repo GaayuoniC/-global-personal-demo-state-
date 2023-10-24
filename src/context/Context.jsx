@@ -3,15 +3,19 @@ import { createContext, useState } from "react";
 export const ThemeContext = createContext();
 
 export function ThemeContextProvider({ children }) {
-  const [color, setColor] = useState({ color: "red" });
+  const [theme, setTheme] = useState({
+    name: "dark",
+    color: "red",
+    backgroundColor: "grey",
+  });
 
-  function changeColor(newColor) {
-    setColor(newColor);
-    console.log(newColor); //console log shows that its functioning
+  function changeTheme(newTheme) {
+    setTheme({ ...theme, ...newTheme });
+    console.log(theme.color); //console log shows that its functioning
   }
 
   return (
-    <ThemeContext.Provider value={{ color, changeColor }}>
+    <ThemeContext.Provider value={{ theme, changeTheme }}>
       {children}
     </ThemeContext.Provider>
   );
