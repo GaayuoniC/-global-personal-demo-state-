@@ -3,12 +3,12 @@ import { ThemeContext } from "../src/context/Context";
 import { useContext } from "react";
 
 export function Header() {
-  const { changeColor } = useContext(ThemeContext);
+  const { changeTheme } = useContext(ThemeContext);
   return (
     <header>
-      <button onClick={() => changeColor({ color: "yellow" })}>Fancy</button>
-      <button onClick={() => changeColor({ color: "green" })}>Crazy</button>
-      <button onClick={() => changeColor({ color: "blue" })}>Classic</button>
+      <button onClick={() => changeTheme({ color: "yellow" })}>Fancy</button>
+      <button onClick={() => changeTheme({ color: "green" })}>Crazy</button>
+      <button onClick={() => changeTheme({ color: "blue" })}>Classic</button>
     </header>
   );
 }
