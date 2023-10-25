@@ -2,15 +2,32 @@ import { createContext, useState } from "react";
 
 export const ThemeContext = createContext();
 
-export function ThemeContextProvider({ children }) {
-  const [theme, setTheme] = useState({
-    name: "dark",
-    color: "red",
-    backgroundColor: "grey",
-  });
+const themes = {
+  crazy: {
+    name: "fancy",
+    backgroundColor: "red",
+    color: "yellow",
+    highlight: "green",
+  },
+  francy: {
+    name: "fancy",
+    backgroundColor: "red",
+    color: "yellow",
+    highlight: "green",
+  },
+  classic: {
+    name: "fancy",
+    backgroundColor: "red",
+    color: "yellow",
+    highlight: "green",
+  },
+};
 
-  function changeTheme(newTheme) {
-    setTheme({ ...theme, ...newTheme }); //used this method but not sure of its functionality
+export function ThemeContextProvider({ children }) {
+  const [theme, setTheme] = useState(themes["classic"]);
+
+  function changeTheme(newThemeName) {
+    setTheme(themes[newThemeName]); //used this method but not sure of its functionality
     console.log(theme.color); //console log shows that its functioning
   }
 
